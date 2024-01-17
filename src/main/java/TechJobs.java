@@ -1,7 +1,4 @@
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Scanner;
+import java.util.*;
 
 /**
  * Created by LaunchCode
@@ -10,7 +7,7 @@ public class TechJobs {
 
     static Scanner in = new Scanner(System.in);
 
-    public static void main (String[] args) {
+    public static void main(String[] args) {
 
         // Initialize our field map with key/name pairs
         HashMap<String, String> columnChoices = new HashMap<>();
@@ -112,14 +109,32 @@ public class TechJobs {
                 validChoice = true;
             }
 
-        } while(!validChoice);
+        } while (!validChoice);
 
         return choiceKeys[choiceIdx];
     }
 
     // Print a list of jobs
     private static void printJobs(ArrayList<HashMap<String, String>> someJobs) {
+        // conditional if there are no results
+        // how do i get key/value out of hashmap that are in arraylist??
+        if (someJobs.isEmpty()) {
+            //prints blank line if println is used
+            System.out.append("No Results");
 
-        System.out.println("printJobs is not implemented yet");
+        } else {
+            for (HashMap<String, String> someJob : someJobs) {
+                    System.out.println("\n*****");
+
+                for (Map.Entry<String, String> job : someJob.entrySet()) {
+                    System.out.println(job.getKey() + ": " + job.getValue());
+                }
+                    System.out.println("*****");
+            }
+        }
+
     }
+
+    //   System.out.println("printJobs is under construction");
 }
+
