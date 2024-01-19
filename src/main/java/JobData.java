@@ -76,7 +76,7 @@ public class JobData {
 
             String aValue = row.get(column);
 
-            if (aValue.contains(value)) {
+            if (aValue.toLowerCase().contains(value.toLowerCase())) {
                 jobs.add(row);
             }
         }
@@ -100,7 +100,7 @@ public class JobData {
 //            //iterate within each hashmap from allJobs
             for(Map.Entry<String, String> jobValue : job.entrySet()){
                 // how do I get the value from jobValue
-                if(jobValue.getValue().contains(value)){
+                if(jobValue.getValue().contains(value.toLowerCase())){
                     // add job to jobs hashmap if it contains value
                     jobs.add(job);
                 }
