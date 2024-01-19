@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * Created by LaunchCode
@@ -93,9 +94,21 @@ public class JobData {
 
         // load data, if not already loaded
         loadData();
-
+        ArrayList<HashMap<String, String>> jobs = new ArrayList<>();
+//         // iterate through allJobs
+        for (HashMap<String, String> job : allJobs){
+//            //iterate within each hashmap from allJobs
+            for(Map.Entry<String, String> jobValue : job.entrySet()){
+                // how do I get the value from jobValue
+                if(jobValue.getValue().contains(value)){
+                    // add job to jobs hashmap if it contains value
+                    jobs.add(job);
+                }
+            }
+        }
         // TODO - implement this method
-        return null;
+       //return null;
+                return jobs;
     }
 
     /**

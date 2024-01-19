@@ -118,14 +118,15 @@ public class TechJobs {
     private static void printJobs(ArrayList<HashMap<String, String>> someJobs) {
         // conditional if there are no results
         // how do i get key/value out of hashmap that are in arraylist??
+        // condition statement to handle if array list is empty
         if (someJobs.isEmpty()) {
-            //prints blank line if println is used
+            //switched to append because println also prints blank line
             System.out.append("No Results");
-
+            //iterate through hashmaps in arraylist
         } else {
             for (HashMap<String, String> someJob : someJobs) {
                     System.out.println("\n*****");
-
+            //iterate through each key/ value pair in each hashmap
                 for (Map.Entry<String, String> job : someJob.entrySet()) {
                     System.out.println(job.getKey() + ": " + job.getValue());
                 }
