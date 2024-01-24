@@ -100,8 +100,9 @@ public class JobData {
 //            //iterate within each hashmap from allJobs
             for(Map.Entry<String, String> jobValue : job.entrySet()){
                 // how do I get the value from jobValue
-                if(jobValue.getValue().toLowerCase().contains(value.toLowerCase())){
+                if(jobValue.getValue().toLowerCase().contains(value.toLowerCase()) && !jobs.contains(job)){
                     // add job to jobs hashmap if it contains value
+                    // job will only be added if jobs arraylist does not contain job
                     jobs.add(job);
                 }
             }
